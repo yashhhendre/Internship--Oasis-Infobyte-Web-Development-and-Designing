@@ -1,0 +1,23 @@
+.container{
+    background-color:ghostwhite;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+h1{
+    color: #1F51FF;
+}
+h2{
+    color:orange;
+}
+button{
+    margin-bottom: 20px;
+    background-color:rgb(84, 202, 84);
+    border-radius: 10px;
+    border: none;
+   height: 30px;
+   width: 100px;
+}
+input{
+    margin-right: 20px;
+}

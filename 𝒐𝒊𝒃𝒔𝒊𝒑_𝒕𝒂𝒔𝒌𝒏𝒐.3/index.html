@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div>
+            <h2>Celcius: "C" Fahrenheit: "F" Kelvin: "K"</h2>
+            Temperature:
+            <input type="text" id="tempinput" placeholder="Enter temperature here"/>
+            <select size="3" id="initialtemp">
+                <option value="c" selected>C</option>
+                <option value="f">F</option>
+                <option value="k">K</option>
+            </select>
+            <br />
+            <br /> <button type="button" onclick="convert()">Convert</button><br>
+            Result:
+            <input type="text" id="result" />
+            
+
+        </div>
+
+        <script>
+            function convert() {
+                var temp = document.getElementById("initialtemp");
+                var valueSelected = temp.value;
+
+                if (valueSelected == "c") {
+                    var convertedF = c_F();
+                    var convertedK = c_K();
+
+                    return document.getElementById("result").value = convertedF + " F" + " & " + convertedK + " K";
+                } else if (valueSelected == "f") {
+                    var convertedC = f_C();
+                    var convertedK = f_K();
+
+                    return document.getElementById("result").value = convertedC + " C" + " & " + convertedK + " K";
+                } else if (valueSelected == "k") {
+                    var convertedF = k_F();
+                    var convertedC = k_C();
+
+                    return document.getElementById("result").value = convertedF + " F" + " & " + convertedC + " C";
+                }
+            }
+
+            function c_F() {
+                var c = document.getElementById("tempinput").value;
+                return (c * 9 / 5) + 32;
+            }
+
+            function c_K() {
+                var c = parseInt(document.getElementById("tempinput").value);
+                let d = (c + 273.15);
+                return d;
+            }
+
+            function f_C() {
+                var f = document.getElementById("tempinput").value;
+                return (f - 32) * 5 / 9;
+            }
+
+            function f_K() {
+                var f = document.getElementById("tempinput").value;
+                return (f - 32) * 5 / 9 + 273.15;
+            }
+
+            function k_C() {
+                var k = document.getElementById("tempinput").value;
+                return k - 273.15;
+            }
+
+            function k_F() {
+                var k = document.getElementById("tempinput").value;
+                return (k - 273.15) * 9 / 5 + 32;
+            }
+        </script>
+    </div>
+</body>
+
+</html>
